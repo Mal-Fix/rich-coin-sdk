@@ -32,7 +32,6 @@ async function run() {
     const result = await RichCoin.sendPayment(toId, amount, fromShop); // 1 коин = 1000 ед.
     console.log(result);
 }
-
 run();
 ```
 
@@ -41,3 +40,22 @@ run();
 |toId|Number|Айди получателя|
 |amount|Number|Сумма перевода|
 |fromShop|Boolean|Если true, то платеж отправится от имени магазина|
+#
+getBalance - Получает баланс по айди пользователей
+
+getMyBalance - Получает баланс текущего пользователя
+
+```js
+async function run() {
+    const balances = await RichCoin.getBalance([1, 100, 236908027]);
+    const myBalance = await RichCoin.getMyBalance();
+    console.log({ balances, myBalance });
+}
+run();
+```
+
+Среди этих методов аргумент принимает только getBalance:
+
+|Параметр|Тип|Описание|
+|-|-|-|
+|userIds|Number\|Number[]|Массив айди пользователей|
