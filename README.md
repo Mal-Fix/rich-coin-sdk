@@ -8,7 +8,7 @@
 Импортируем библиотеку:
 ```js
 const RichCoinInit = require('rich-coin-sdk');
-const RichCoin = new RichCoinInit("key api", merchantId);
+const RichCoin = new RichCoinInit("key api", merchantId).API();
 ```
 # API
 getHistory - Получает список переводов
